@@ -16,10 +16,10 @@ listint_t *insert_node(listint_t **head, int number)
 	{
 		new->n = number;
 		new->next = *head;
-		if (new->n <= (*head)->n || !new->next)
+		if (!new->next || new->n <= (*head)->n)
 			*head = new;
 		else
-			while (new->n > new->next->n && new->next)
+			while (new->next && new->n > new->next->n)
 			{
 				tmp = new->next;
 				new->next = tmp->next;
