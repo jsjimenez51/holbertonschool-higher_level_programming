@@ -1,0 +1,31 @@
+#include "lists.h"
+
+/**
+ * insert_node - inserts a new node into a linked list.
+ * @head: a pointer to the head node of a linked list.
+ * @number: the number to be stored in the new node.
+ *
+ * Return: returns a pointer to the new node in the list.
+ */
+listint_t *insert_node(listint_t **head, int number)
+{
+	listint_t *tmp = NULL, *new = NULL;
+
+	new = malloc(sizeof(listint_t));
+	if (new)
+	{
+		new->n = number;
+		new->next = *head;
+		if (new->n <= (*head)->n || !new->next)
+			*head = new;
+		else
+			while (new->n > new->next->n && new->next)
+			{
+				tmp = new->next;
+				new->next = tmp->next;
+			}
+		if (tmp)
+			tmp->next = new;
+	}
+	return (new);
+}
