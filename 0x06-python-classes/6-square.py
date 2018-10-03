@@ -13,13 +13,8 @@ class Square:
         """
         Instantiated with size.
         """
-        if type(size) != int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
-            self.__position = position
+        self.size = size
+        self.position = position
 
     def area(self):
         """
