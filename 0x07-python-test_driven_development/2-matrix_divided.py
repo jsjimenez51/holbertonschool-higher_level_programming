@@ -8,10 +8,8 @@ def matrix_divided(matrix, div):
     """
     matrix_err = "matrix must be a matrix (list of lists) of integers/floats"
 
-    if not isinstance(matrix, list):
-        # check if matrix is made of lists
-        raise TypeError(matrix_err)
-    if not all(isinstance(line, list) for line in matrix):
+    if not isinstance(matrix, list) or \
+       all(isinstance(line, list) for line in matrix) is False:
         # check line by line of the matrix for lists
         raise TypeError(matrix_err)
     if len(matrix) == 0 or all(len(line) == 0 for line in matrix):
