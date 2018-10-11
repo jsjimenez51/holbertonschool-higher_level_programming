@@ -77,11 +77,7 @@ class Rectangle:
         """
         Prints the Rectangle in #'s.
         """
-        rectangle = ''
-        if self.__width == 0 or self.__height == 0:
-            return rectangle
-        for row in range(self.__height):
-            rectangle += '#' * self.__width
-            if rectangle != self.__height - 1:
-                rectangle += '\n'
-        return rectangle
+        if self.width == 0 or self.height == 0:
+            return ''
+        else:
+            return '\n'.join(('#' * self.width) for row in range(self.height))
