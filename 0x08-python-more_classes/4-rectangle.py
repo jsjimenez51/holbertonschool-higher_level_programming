@@ -63,31 +63,27 @@ class Rectangle:
         """
         Returns the area of the Rectangle.
         """
-        return self.__width * self.__height
+        return (self.__width * self.__height)
 
     def perimeter(self):
         """
         Returns the perimeter of the Rectangle.
         """
-        if self.width == 0 or self.height == 0:
+        if self.height == 0 or self.width == 0:
             return 0
-        return (self.width + self.height) * 2
+        return ((self.width + self.height) * 2)
 
     def __str__(self):
         """
         Prints the Rectangle in #'s.
         """
-        rectangle = ''
-        if self.__width == 0 or self.__height == 0:
-            return rectangle
-        for row in range(self.__height):
-            rectangle += '#' * self.__width
-            if rectangle != self.__height - 1:
-                rectangle += '\n'
-        return rectangle
+        if self.width == 0 or self.height == 0:
+            return ("")
+        else:
+            return '\n'.join(('#' * self.width) for row in range(self.height))
 
     def __repr__(self):
         """
-        A representation of the Rectangle.
+        Returns a representation string to the object
         """
         return ('Rectangle({:d}, {:d})'.format(self.width, self.height))
