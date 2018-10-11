@@ -63,21 +63,21 @@ class Rectangle:
         """
         Returns the area of the Rectangle.
         """
-        return self.__width * self.__height
+        return (self.__width * self.__height)
 
     def perimeter(self):
         """
         Returns the perimeter of the Rectangle.
         """
-        if self.width == 0 or self.height == 0:
+        if self.height == 0 or self.width == 0:
             return 0
-        return (self.width + self.height) * 2
+        return ((self.width + self.height) * 2)
 
     def __str__(self):
         """
         Prints the Rectangle in #'s.
         """
         if self.width == 0 or self.height == 0:
-            return ''
+            return ("")
         else:
             return '\n'.join(('#' * self.width) for row in range(self.height))
