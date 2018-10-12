@@ -8,6 +8,9 @@ my name is Big Josh Joshua Sales Jimenez
 >>> say_my_name("1", "2")
 my name is 1 2
 
+>>> say_my_name("Big")
+my name is Big
+
 """
 Errors
 """
@@ -66,3 +69,8 @@ TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
+
+>>> say_my_name("Josh" /"Jimenez")
+Traceback (most recent call last):
+...
+TypeError: unsupported operand type(s) for /: 'str' and 'str'
