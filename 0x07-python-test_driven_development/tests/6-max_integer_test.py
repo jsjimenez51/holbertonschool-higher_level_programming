@@ -24,48 +24,33 @@ class TestMaxInteger(unittest.TestCase):
             max_integer([2, 4, 5, 6, None])
 
     def test_one(self):
-        self.assertEqual(max_integer([55]), 55)
+        self.assertEqual(max_integer([24]), 24)
 
     def test_integers(self):
-        self.assertEqual(max_integer([1, 5, 6, 4]), 6)
-        self.assertEqual(max_integer([55, 55, 55, 55]), 55)
-        self.assertEqual(max_integer([6, 2, 3, 4]), 6)
-        self.assertEqual(max_integer([1, 3, 4, 2]), 4)
+        self.assertEqual(max_integer([2, 3, 8, 4]), 8)
+        self.assertEqual(max_integer([23, 23, 23, 23]), 23)
+        self.assertEqual(max_integer([10, 2, 3, 4]), 10)
+        self.assertEqual(max_integer([7, 23, 9, 10]), 23)
         self.assertEqual(max_integer([1, 1, 1, 1]), 1)
-        self.assertEqual(max_integer([3]), 3)
+        self.assertEqual(max_integer([8]), 8)
 
     def test_integer_neg(self):
-        self.assertEqual(max_integer([-44, -66, -43, -22]), -22)
-        self.assertEqual(max_integer([1, 3, 74, -2]), 74)
+        self.assertEqual(max_integer([-34, -79, -12, -2]), -2)
+        self.assertEqual(max_integer([9, 45, 98, -6]), 98)
 
     def test_float(self):
-        self.assertEqual(max_integer([2.2, 3.3, 4.4, 5.5]), 5.5)
-        self.assertEqual(max_integer([-44.5, -53.22, -2.224, -3.14]), -2.224)
+        self.assertEqual(max_integer([1.2, 2.4, 3.8, 6.9]), 6.9)
+        self.assertEqual(max_integer([-42.3, -69.99, -1.11, -3.14]), -1.11)
 
     def test_string(self):
-        self.assertEqual(max_integer("12345323121"), "5")
-        self.assertEqual(max_integer("1, 2, 3"), "3")
+        self.assertEqual(max_integer("12345"), "5")
+        self.assertEqual(max_integer("6, 7, 8"), "8")
 
     def test_alpha(self):
-        self.assertEqual(max_integer(["xyz"]), "xyz")
-        self.assertEqual(max_integer(["abc", "xyz"]), "xyz")
-        self.assertEqual(max_integer(["abc", "1", "4", "xyz"]), "xyz")
+        self.assertEqual(max_integer(["abc"]), "abc")
+        self.assertEqual(max_integer(["abc", "def"]), "def")
+        self.assertEqual(max_integer(["abc", "2", "8", "xyz"]), "xyz")
 
-    def test_other_type(self):
-        self.assertEqual(max_integer([[1, 2, 3, 4], [1, 4, 3, 2]]), [1, 4, 3, 2])
-        self.assertEqual(max_integer((3, 4, 5, 6, 19)), 19)
-        with self.assertRaises(KeyError):
-            max_integer({1: 1, 4: 5, 5: 4})
-
-    def test_mix(self):
-        with self.assertRaises(TypeError):
-            max_integer(["help", 22, "44", 4.5, -3])
-        with self.assertRaises(TypeError):
-            max_integer(["help", [22], "44", 5.5, -55])
-
-    def test_none(self):
-        with self.assertRaises(TypeError):
-            max_integer(None)
 
 if __name__ == "__main__":
     unittest.main()
