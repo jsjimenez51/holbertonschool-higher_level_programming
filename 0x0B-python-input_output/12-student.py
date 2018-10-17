@@ -21,7 +21,7 @@ class Student:
         Returns a dictionary representation of an instance
         """
         if not attrs:
-            return self.__dict__
+            return (self.__dict__)
 
         return ({key: value for key, value in self.__dict__.items()
                  if key in attrs})
