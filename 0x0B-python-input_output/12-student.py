@@ -20,7 +20,7 @@ class Student:
         """
         Returns a dictionary representation of an instance
         """
-        if attrs == None:
+        if attrs is None:
             return (self.__dict__)
 
         return ({key: value for key, value in self.__dict__.items()
