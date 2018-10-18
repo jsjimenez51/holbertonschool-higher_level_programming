@@ -66,3 +66,50 @@ class Rectangle(Base):
             if value <= 0:
                 raise ValueError('height must be > 0')
             self.__height = value
+
+        @property
+        def x(self):
+            """
+            Returns x
+            """
+            return self.__x
+
+        @x.setter
+        def x(self, value):
+            """
+            Sets the value of x
+
+            Attribute:
+                value (int): value to set x to
+            """
+            if not isinstance(value, int):
+                raise TypeError('x must be an integer')
+            if value < 0:
+                raise TypeError('x must be >= 0')
+            self.__x = value
+
+        @property
+        def y(self):
+            """
+            Returns y
+            """
+            return self.__y
+
+        @y.setter
+        def y(self, value):
+            """
+            Sets the value of y
+
+            Attributes:
+                value (int): valut to set y to
+            """
+            if not isinstance(value, int):
+                raise TypeError('y must be an integer')
+            if value < 0:
+                raise ValueError('y must be >= 0')
+
+        def area(self):
+            """
+            Returns the area of the rectangle
+            """
+            return self.__width * self.__height
