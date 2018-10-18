@@ -119,10 +119,9 @@ class Rectangle(Base):
         """
         Prints the Rectangle with #s to stdout
         """
-        for row in range(self.y):
-            print()
+        print("\n" * self.y, end="")
         for row in range(self.height):
-            print('{}{}'.format(' ' * self.x, '#' * self.width))
+            print(' ' * self.x + '#' * self.__width)
 
     def __str__(self):
         """
@@ -130,3 +129,23 @@ class Rectangle(Base):
         """
         return ('[Rectangle] ({}) {}/{} - {}/{}'
                 .format(self.id, self.x, self.y, self.width, self.height))
+
+    def update(self, *args, **kwargs):
+        """
+        Assigns an argument to each attribute
+        """
+        update = len(args)
+        if update is not 0:
+            if update >= 1:
+                self.id = args[0]
+            if update >= 2:
+                self.width == args[1]
+            if update >= 3:
+                self.height == args[2]
+            if update >= 4:
+                self.__x = args[3]
+            if update >= 5:
+                self.__y = args[4]
+        else:
+            for name, value in kwargs.items():
+                setattr(self, name, value)
