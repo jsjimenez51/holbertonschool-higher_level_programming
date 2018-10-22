@@ -139,16 +139,16 @@ class Rectangle(Base):
             if update >= 1:
                 self.id = args[0]
             if update >= 2:
-                self.width == args[1]
+                self.width = args[1]
             if update >= 3:
-                self.height == args[2]
+                self.height = args[2]
             if update >= 4:
                 self.__x = args[3]
             if update >= 5:
                 self.__y = args[4]
         else:
-            for name, value in kwargs.items():
-                setattr(self, name, value)
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """
