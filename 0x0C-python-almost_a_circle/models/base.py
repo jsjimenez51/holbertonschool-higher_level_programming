@@ -49,8 +49,7 @@ class Base:
                   'w', encoding='utf-8') as a_file:
             ob_list = []
             if len(list_objs) == 0 or list_objs is None:
-                ob_list = []
-                a_file.write(ob_list)
+                a_file.write('[]')
             else:
                 for idx in list_objs:
                     ob_list.append(idx.to_dictionary())
