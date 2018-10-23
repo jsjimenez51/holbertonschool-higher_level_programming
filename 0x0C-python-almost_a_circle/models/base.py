@@ -48,8 +48,8 @@ class Base:
         with open('{}.json'.format(cls.__name__),
                   'w', encoding='utf-8') as a_file:
             ob_list = []
-            if len(list_objs) == 0 or list_objs is None:
-                a_file.write('[]')
+            if list_objs is None or len(list_objs) == 0:
+                ob_list = []
             else:
                 for idx in list_objs:
                     ob_list.append(idx.to_dictionary())
