@@ -5,17 +5,17 @@ is safe from injections """
 
 if __name__ == '__main__':
     import MySQLdb
-    from sys import argv
+    import sys
 
     usa_states = MySQLdb.connect(host="localhost",
                                  port=3306,
-                                 user=argv[1],
-                                 passwd=argv[2],
-                                 db=argv[3],
+                                 user=sys.argv[1],
+                                 passwd=sys.argv[2],
+                                 db=sys.argv[3],
                                  charset="utf8")
     cur = usa_states.cursor()
     grab_state = "SELECT * FROM states WHERE name = %s ORDER BY id"
-    cur.execute(grab_state, (argv[4],))
+    cur.execute(grab_state, (sys.argv[4],))
     states = cur.fetchall()
     for this_state in states:
         print(this_state)
