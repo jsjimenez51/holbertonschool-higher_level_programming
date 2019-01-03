@@ -3,16 +3,16 @@
 
 if __name__ == '__main__':
     import MySQLdb
-    from sys import argv
+    import sys
 
     usa_states = MySQLdb.connect(host="localhost",
                                  port=3306,
-                                 user=argv[1],
-                                 passwd=argv[2],
-                                 db=argv[3],
+                                 user=sys.argv[1],
+                                 passwd=sys.argv[2],
+                                 db=sys.argv[3],
                                  charset="utf8")
     cur = usa_states.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC")
     N_states = cur.fetchall()
     for state in N_states:
         print(state)

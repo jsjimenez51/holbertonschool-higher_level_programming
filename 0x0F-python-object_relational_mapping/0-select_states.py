@@ -3,14 +3,14 @@
 
 if __name__ == '__main__':
     import MySQLdb
-    from sys import argv
+    import sys
 
 # Connects Python MySQL modlule to the db
     select_states = MySQLdb.connect(host="localhost",
                                     port=3306,
-                                    user=argv[1],
-                                    passwd=argv[2],
-                                    db=argv[3],
+                                    user=sys.argv[1],
+                                    passwd=sys.argv[2],
+                                    db=sys.argv[3],
                                     charset="utf8")
 # Creates a cursor to utilize this particular connection
     cur = select_states.cursor()
