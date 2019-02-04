@@ -19,7 +19,7 @@ def find_peak(list_of_integers):
         if list_of_integers[end] > list_of_integers[end - 1]:
             return list_of_integers[end]
         # finds the mid point of the list to begin binary search
-        mid = (end -start) // 2
+        mid = (end - start) // 2
         if list_of_integers[mid] < list_of_integers[mid - 1]:
             return find_peak(list_of_integers[:mid])
         if list_of_integers[mid] < list_of_integers[mid + 1]:
