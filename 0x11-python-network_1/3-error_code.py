@@ -6,7 +6,7 @@ argv[1]: URL
 """
 from urllib.request import urlopen
 from urllib.parse import urlencode
-from urllib.error import URLError
+from urllib.error import HTTPError
 from sys import argv
 
 
