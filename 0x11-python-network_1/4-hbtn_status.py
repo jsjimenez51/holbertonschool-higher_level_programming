@@ -9,4 +9,4 @@ if __name__ == "__main__":
     req = get("https://intranet.hbtn.io/status")
     print("Body response:")
     print("\t- type: {}".format(type(req.text)))
-    print("\t- content: {}".format(req.content.decode('utf-8')))
+    print("\t- content: {}".format(req.text))
