@@ -7,13 +7,18 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    req = post('https://swapi.co/api/people', params={'search': argv[1]})
+    if len(argv) == 1:
+        char = ""
+    else:
+        char = argv[1]
+    package = 'search': argv[1]
+    req = post('https://swapi.co/api/people/?', params=package)
     try:
         response = r.json()
-    except:
-        print("Not a valid JSON")
-    else:
+        results = response['results']
         count = response['count']
         print("Number of results: {}".format(count))
-        for item in response['results']:
+        for item in results:
             print(item['name'])
+    except Exception as err:
+        print(err)
