@@ -14,9 +14,9 @@ if __name__ == "__main__":
         char = argv[1]
 
     package = {'search': char}
-    req = get('https://swapi.co/api/people/?', params=package)
 
     try:
+        req = get('https://swapi.co/api/people/?', params=package)
         response = req.json()
         results = response['results']
         count = response['count']
