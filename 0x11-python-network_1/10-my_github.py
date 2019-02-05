@@ -8,8 +8,10 @@ from sys import argv
 
 if __name__ == '__main__':
 
+    user = argv[1]
+    pwd = argv[2]
     try:
-        req = get('https://api.github.com/user', auth=(argv[1], argv[2]))
+        req = get('https://api.github.com/user', auth=(user, pwd))
         print(req.json()['id'])
     except:
         print("None")
