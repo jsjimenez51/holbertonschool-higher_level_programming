@@ -8,10 +8,10 @@ from sys import argv
 
 if __name__ == "__main__":
     if argv[1] is None:
-        letter = ""
+        q = ""
     else:
-        letter = argv[1]
-    req = post('http://0.0.0.0:5000/search_user', data={'letter': letter})
+        q = argv[1]
+    req = post('http://0.0.0.0:5000/search_user', data={'q': letter})
     try:
         response = req.json()
     except:
