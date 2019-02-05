@@ -7,11 +7,13 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    if argv[1] is None:
+
+    if len(argv) == 1:
         letter = ""
     else:
         letter = argv[1]
-    req = post('http://0.0.0.0:5000/search_user', data={'q': letter})
+    package = {'q': letter}
+    req = post('http://0.0.0.0:5000/search_user', data=package)
 
     try:
         response = req.json()
