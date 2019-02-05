@@ -2,7 +2,7 @@
 """
 sends a search request to the Star Wars API
 """
-from requests import post
+from requests import get
 from sys import argv
 
 
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     package = {'search': char}
 
     try:
-        req = get('https://swapi.co/api/people/?', params=package)
+        req = get('https://swapi.co/api/people', params=package)
         response = req.json()
         results = response['results']
         count = response['count']
