@@ -12,7 +12,7 @@ if __name__ == "__main__":
         char = ""
     else:
         char = argv[1]
-    package = 'search': argv[1]
+    package = {'search': argv[1]}
     req = post('https://swapi.co/api/people', params=package)
     try:
         response = r.json()
