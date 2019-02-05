@@ -2,7 +2,7 @@
 """
 takes users Github credentials and access the GIthub API to display id
 """
-from request import get
+from requests import get
 from sys import argv
 
 
