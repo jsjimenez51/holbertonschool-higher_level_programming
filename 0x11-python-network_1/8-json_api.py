@@ -11,7 +11,7 @@ if __name__ == "__main__":
         q = ""
     else:
         q = argv[1]
-    req = post('http://0.0.0.0:5000/search_user', data={'q': letter})
+    req = post('http://0.0.0.0:5000/search_user', data={'q': q})
     try:
         response = req.json()
     except:
