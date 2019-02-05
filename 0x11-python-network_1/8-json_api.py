@@ -8,16 +8,18 @@ from sys import argv
 
 if __name__ == "__main__":
     if argv[1] is None:
-        char = ""
+        letter = ""
     else:
-        char = argv[1]
-    req = post('http://0.0.0.0:5000/search_user', data={'q': char})
+        letter = argv[1]
+    req = post('http://0.0.0.0:5000/search_user', data={'q': letter})
 
     try:
         response = req.json()
-        if response:
-            print("[{}] {}".format(response['id'], response['name']))
-        else:
-            print("No result")
+        if len(response) == 0:
+            raise KeyError()
+    except KeyError:
+        print("No result")
     except ValueError:
         print("Not a valid JSON")
+    else:
+        print("[{}] {}".format(response['id'], response['name']))
