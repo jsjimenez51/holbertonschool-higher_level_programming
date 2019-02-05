@@ -15,10 +15,9 @@ if __name__ == "__main__":
 
     try:
         response = req.json()
-    except:
-        print("Not a valid JSON")
-    else:
         if response:
             print("[{}] {}".format(response['id'], response['name']))
         else:
             print("No result")
+    except ValueError:
+        print("Not a valid JSON")
