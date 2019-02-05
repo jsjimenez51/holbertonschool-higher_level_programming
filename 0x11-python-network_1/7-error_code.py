@@ -3,7 +3,7 @@
 sends a request to a URL and displays the body of the response
 """
 from requests import get
-from request.exceptions import HTTPError
+from requests.exceptions import HTTPError
 from sys import argv
 
 
