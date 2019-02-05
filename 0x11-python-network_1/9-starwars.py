@@ -7,12 +7,13 @@ from sys import argv
 
 
 if __name__ == "__main__":
+
     if len(argv) == 1:
         char = ""
     else:
         char = argv[1]
     package = 'search': argv[1]
-    req = post('https://swapi.co/api/people/?', params=package)
+    req = post('https://swapi.co/api/people', params=package)
     try:
         response = r.json()
         results = response['results']
