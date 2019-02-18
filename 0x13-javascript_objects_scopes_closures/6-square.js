@@ -1,5 +1,5 @@
 #!/usr/bin/node
-let Sqr = require('./4-rectangle');
+let Sqr = require('./5-square');
 class Square extends Sqr {
   constructor (size) {
     super(size, size);
