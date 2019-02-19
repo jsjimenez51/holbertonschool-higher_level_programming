@@ -11,6 +11,7 @@ request(url, function (error, response, body) {
     let data = JSON.parse(body);
     let movieData = (data.results);
     let wedgeID = /18/;
+
     for (let movie of movieData) {
       let chars = movie.characters;
       for (let isWedge of chars) {
@@ -21,4 +22,4 @@ request(url, function (error, response, body) {
     }
     console.log(count);
   }
-})
+});
